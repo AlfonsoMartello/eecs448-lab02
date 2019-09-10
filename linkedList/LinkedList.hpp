@@ -108,9 +108,17 @@ bool LinkedList<T>::removeBack()
 	Node<T>* secondintoLast = nullptr;
 	bool isRemoved = false;
 
-	/** TODO
-		Fix this method
-	*/
+	if (!isEmpty())
+	{
+		if (size() == 1) //if only one element is in the list, it is removed
+		{
+			lastNode = m_front;
+			m_front = lastNode->getNext();
+			delete lastNode;
+			m_size--;
+			isRemoved = true;
+		}
+	}
 
 	return(isRemoved);
 }
